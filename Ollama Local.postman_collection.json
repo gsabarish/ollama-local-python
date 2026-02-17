@@ -1,0 +1,48 @@
+{
+  "info": {
+    "_postman_id": "e46485a0-0546-4254-9837-f3e23a33576a",
+    "name": "Ollama Local",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2945171"
+  },
+  "item": [
+    {
+      "name": "POST Ollama",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"llama3.1\",\n  \"messages\": [\n    { \"role\": \"user\", \"content\": \"Testing Ollama connection from Postman\" }\n  ],\n  \"stream\": false\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{ollama_base_url}}/api/chat",
+          "protocol": "http",
+          "host": [
+            "{{ollama_base_url}}"
+          ],
+          "path": [
+            "api",
+            "chat"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
